@@ -16,8 +16,11 @@ jobs:
       # Commands are run in a Windows virtual machine environment
       - checkout
       - run:
-           name: running frontend tests
+           name: update
            command: |
+            ls
+            cd src
+            cd app
             npm install
             npm update
             npm run lint
