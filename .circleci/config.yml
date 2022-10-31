@@ -18,9 +18,7 @@ jobs:
       - run:
            name: update
            command: |
-            ls
-            cd src
-            cd app
+            cd DartsApp/src/app
             npm install
             npm update
             npm run lint
