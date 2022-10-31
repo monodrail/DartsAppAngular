@@ -18,8 +18,6 @@ jobs:
       - run:
            name: running frontend tests
            command: |
-            cd src
-            cd app
             npm install
             npm update
             npm run lint
