@@ -1,0 +1,30 @@
+version: 2.1 # Use version 2.1 to enable orb usage.
+
+orbs:
+  win: circleci/windows@5 # The Windows orb give you everything you need to start using the Windows executor.
+
+jobs:
+  update:
+    # executor:
+    #   name: win/server-2019 # executor type
+    #   size: "medium" # resource class, can be "medium", "large", "xlarge", "2xlarge", defaults to "medium" if not specified
+
+    docker:
+      - image: cimg/node:current
+    
+    steps:
+      # Commands are run in a Windows virtual machine environment
+      - checkout
+      - run:
+           name: running frontend tests
+           command: |
+            cd src
+            cd app
+            npm install
+            npm update
+            npm run lint
+            npm test
+workflows:
+    testing-workflow:
+        jobs:
+            - update
