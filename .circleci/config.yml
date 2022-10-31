@@ -22,7 +22,6 @@ jobs:
             npm install
             npm update
             npm run lint
-            npm test
 workflows:
     testing-workflow:
         jobs:
