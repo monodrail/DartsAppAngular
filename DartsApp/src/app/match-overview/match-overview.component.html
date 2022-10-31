@@ -1,0 +1,31 @@
+<p>match-overview works!</p>
+<button (click)="getGames()">KLIK OM TE LADEN</button>
+<table>
+    <thead>
+        <tr>
+            <th>gameID</th>
+            <th>player1ID</th>
+            <th>player1</th>
+            <th>vlag player1</th>
+            <th>player2ID</th>
+            <th>player2</th>
+            <th>vlag player1</th>
+            <th>numberOfSets</th>
+            <th>numberOfLegs</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let game of games"> 
+            <td>{{game.gameID}}</td>
+            <td>{{game.player1ID}}</td>
+            <td>{{game.player1.name}}</td>
+            <td><img src={{this.flagUrl}}{{game.player1.country}}/></td>
+            <td>{{game.player2ID}}</td>
+            <td>{{game.player2.name}}</td>
+            <td><img src={{this.flagUrl}}{{game.player2.country}}/></td>
+            <td>{{game.numberOfSets}}</td>
+            <td>{{game.numberOfLegs}}</td>
+        </tr>          
+    </tbody>
+</table>
+
